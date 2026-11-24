@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "DM Serif Display", serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "DM Sans", sans-serif; background: #f8f1e7; }
+.font-display { font-family: "DM Serif Display", serif; }
+.hero-clip { border-radius: 2.5rem 2.5rem 8rem 2.5rem; }
+::selection { color: #fff8ec; background: #a74424; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.9s ease both; }
+@keyframes spin-slow { to { transform: rotate(350deg); } }
+.badge { animation: spin-slow 14s linear infinite alternate; }
+
+@media (max-width: 640px) { .hero-clip { border-radius: 1.5rem 1.5rem 5rem 1.5rem; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
